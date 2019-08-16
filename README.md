@@ -1,5 +1,19 @@
 # real-world-vue
 
+simple event list created with vue-cli、vue-router、vuex
+
+## Install json-server
+```
+npm install -g json-server
+```
+
+## Start Your Mock Server
+```
+json-server --watch db.json
+```
+
+# Vue Setup 
+
 ## Project setup
 ```
 npm install

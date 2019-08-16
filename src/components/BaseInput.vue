@@ -17,6 +17,10 @@ export default {
         input: this.updateValue
       }
     }
+  },
+  created() {
+    // console.log(this.$attrs)
+    // console.log(this.$listeners)
   }
 }
 </script>

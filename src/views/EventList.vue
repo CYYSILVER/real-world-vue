@@ -7,17 +7,20 @@
       :event="event"
       @deleteEvent="deleteEvent"
     />
-    <template v-if="page > 1">
-      <router-link :to="{ name: 'event-list', query: { page: page - 1 } }"
-        >Prev Page</router-link
-      >
-    </template>
-    <span v-show="page != 1 && hasNextPage"> | </span>
-    <template v-if="hasNextPage">
-      <router-link :to="{ name: 'event-list', query: { page: page + 1 } }"
-        >Next Page</router-link
-      >
-    </template>
+    <div>
+      <template v-if="page > 1">
+        <router-link :to="{ name: 'event-list', query: { page: page - 1 } }"
+          >Prev Page</router-link
+        >
+      </template>
+      <span v-show="page != 1 && hasNextPage"> | </span>
+      <template v-if="hasNextPage">
+        <router-link :to="{ name: 'event-list', query: { page: page + 1 } }"
+          >Next Page</router-link
+        >
+      </template>
+      <span class="-text-primary" style="float: right;">Page {{ page }} </span>
+    </div>
   </div>
 </template>
 <script>

@@ -1,4 +1,5 @@
-import EventService from '@/services/EventServices'
+// import EventService from '@/services/EventServices'
+import EventService from '@/services/DBServices'
 export default {
   namespaced: true,
   state: {

@@ -34,7 +34,7 @@ const router = new Router({
       props: true,
       beforeEnter(routeTo, routeFrom, next) {
         store
-          .dispatch('event/fetchEvent', routeTo.params.id)
+          .dispatch('event/fetchEvent', parseInt(routeTo.params.id))
           .then(event => {
             routeTo.params.event = event
             next()

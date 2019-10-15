@@ -22,7 +22,7 @@ const router = new Router({
   },
   routes: [
     {
-      path: '/',
+      path: '/eventlist',
       name: 'event-list',
       component: EventList,
       props: true
@@ -66,6 +66,12 @@ const router = new Router({
         params: {
           resource: 'page'
         }
+      }
+    },
+    {
+      path: '/',
+      redirect: {
+        name: 'event-list'
       }
     },
     {

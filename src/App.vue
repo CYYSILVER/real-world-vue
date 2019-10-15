@@ -23,13 +23,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  background-size: 100vw 100vh;
+  background-size: 100% 100%;
 }
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  min-height: 100vh;
 }
 #app {
   box-sizing: border-box;

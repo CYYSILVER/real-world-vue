@@ -2,8 +2,13 @@
   <div id="nav" class="nav">
     <router-link to="/" class="brand">Events</router-link>
     <nav>
-      <router-link :to="{ name: 'event-list' }">List</router-link> |
-      <router-link :to="{ name: 'event-create' }">Create</router-link>
+      <router-link :to="{ name: 'event-list' }" class="nav-item"
+        >列表</router-link
+      >
+      |
+      <router-link :to="{ name: 'event-create' }" class="nav-item"
+        >创建</router-link
+      >
     </nav>
   </div>
 </template>
@@ -20,7 +25,6 @@ export default {}
   border-radius: 5px;
   padding: 5px 20px;
   margin: 10px -10px;
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.3), -2px 3px 15px rgba(0, 0, 0, 0.1);
   transition: 0.2s;
 }
 .nav > .brand {
@@ -29,6 +33,7 @@ export default {}
   font-size: 1.5em;
   color: #39b982;
   text-decoration: none;
+  transition: 0.2s;
 }
 .nav .nav-item {
   box-sizing: border-box;

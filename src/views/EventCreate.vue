@@ -2,66 +2,65 @@
   <form @submit.prevent="createEvent">
     <BaseSelect
       v-model="event.category"
-      label="Select a category"
+      label="选择一项类别"
       :options="categories"
       :class="{ error: $v.event.category.$error }"
       @blur="$v.event.category.$touch()"
     />
     <template v-if="$v.event.category.$error">
-      <P v-if="!$v.event.category.required" class="errorMessage"
-        >Category is required</P
-      >
+      <P v-if="!$v.event.category.required" class="errorMessage">请选择类别</P>
     </template>
 
-    <h3>Name & describe your event</h3>
+    <h3>名称和描述</h3>
     <BaseInput
-      label="Title"
+      label="标题"
       v-model.trim="event.title"
       type="text"
-      placeholder="Add a title"
+      placeholder="在此添加标题"
       class="field"
       :class="{ error: $v.event.title.$error }"
       @blur="$v.event.title.$touch()"
     />
     <template v-if="$v.event.title.$error">
       <p v-if="!$v.event.title.required" class="errorMessage">
-        Title is required.
+        请添加标题
       </p>
     </template>
     <BaseInput
-      label="Description"
+      label="描述"
       type="text"
       v-model.trim="event.description"
-      placeholder="Add a description"
+      placeholder="在此添加描述"
       class="field"
       :class="{ error: $v.event.description.$error }"
       @blur="$v.event.description.$touch()"
     />
     <template v-if="$v.event.description.$error">
       <p v-if="!$v.event.description.required" class="errorMessage">
-        Description is required.
+        请添加描述
       </p>
     </template>
-    <h3>Where is your event?</h3>
+    <h3>在什么地方</h3>
     <BaseInput
-      label="Location"
+      label="地点"
       v-model.trim="event.location"
       type="text"
-      placeholder="Location"
+      placeholder="请输入事件发生地点"
       class="field"
       :class="{ error: $v.event.location.$error }"
       @blur="$v.event.location.$touch()"
     />
     <template v-if="$v.event.location.$error">
       <p v-if="!$v.event.location.required" class="errorMessage">
-        Location is required.
+        请输入地点
       </p>
     </template>
-    <h3>When is your event?</h3>
+    <h3>什么时候开始</h3>
     <div class="field">
-      <label>Date</label>
+      <label>日期</label>
       <datepicker
-        placeholder="Select a date"
+        :language="zh"
+        placeholder="选择日期"
         v-model="event.date"
         @closed="$v.event.date.$touch()"
         @opened="$v.event.date.$touch()"
@@ -70,20 +69,20 @@
     </div>
     <template v-if="$v.event.date.$error">
       <p v-if="!$v.event.date.required" class="errorMessage">
-        Date is required.
+        请选择日期
       </p>
     </template>
     <BaseSelect
       v-model="event.time"
       :options="times"
-      label="Time"
+      label="时间"
       class="field"
       :class="{ error: $v.event.time.$error }"
       @blur="$v.event.time.$touch()"
     />
     <template v-if="$v.event.time.$error">
       <p v-if="!$v.event.time.required" class="errorMessage">
-        Time is required.
+        请选择时间
       </p>
     </template>
     <BaseButton
@@ -93,7 +92,7 @@
       >Submit</BaseButton
     >
     <p v-if="$v.$anyError" class="errorMessage">
-      Please fill out the required field(s).
+      请将表格填写完整
     </p>
   </form>
 </template>

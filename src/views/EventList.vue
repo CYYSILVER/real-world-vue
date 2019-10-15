@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Events for {{ user.user.name }}</h1>
+    <h1>Your Events</h1>
     <EventCard
       v-for="event in events"
       :key="event.id"
@@ -10,16 +10,16 @@
     <div>
       <template v-if="page > 1">
         <router-link :to="{ name: 'event-list', query: { page: page - 1 } }"
-          >Prev Page</router-link
+          >上一页</router-link
         >
       </template>
       <span v-show="page != 1 && hasNextPage"> | </span>
       <template v-if="hasNextPage">
         <router-link :to="{ name: 'event-list', query: { page: page + 1 } }"
-          >Next Page</router-link
+          >下一页</router-link
         >
       </template>
-      <span class="-text-primary" style="float: right;">Page {{ page }} </span>
+      <span class="-text-primary" style="float: right;">第 {{ page }} 页 </span>
     </div>
   </div>
 </template>

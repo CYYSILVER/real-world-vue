@@ -12,14 +12,6 @@ export default new Vuex.Store({
     notification
   },
   state: {
-    categories: [
-      'sustainability',
-      'nature',
-      'animal welfare',
-      'housing',
-      'education',
-      'food',
-      'community'
-    ]
+    categories: ['学习', '工作', '娱乐', '社交', '食物', '自然', '其他']
   }
 })

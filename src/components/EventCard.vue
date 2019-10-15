@@ -8,9 +8,12 @@
 
     <div class="event-card -shadow">
       <div class="button" @click.stop="deleteEvent">×</div>
-      <span class="eyebrow">@{{ event.time }} on {{ event.date | date }}</span>
+      <BaseIcon name="calendar" class="eyebrow"
+        >{{ event.date | date }}, {{ event.time }}</BaseIcon
+      >
       <h4 class="title">{{ event.title }}</h4>
-      <BaseIcon name="users">{{ event.attendees.length }} attending</BaseIcon>
+      <p class="-text-gray">{{ event.description }}</p>
+      <BaseIcon name="map">{{ event.location }}</BaseIcon>
     </div>
     <!-- </router-link> -->
   </div>

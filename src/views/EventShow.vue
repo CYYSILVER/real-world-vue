@@ -1,29 +1,31 @@
 <template>
   <div>
     <div class="event-header">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date | date }}</span>
+      <BaseIcon name="calendar" class="eyebrow"
+        >{{ event.date | date }}, {{ event.time }}</BaseIcon
+      >
       <h1 class="title">{{ event.title }}</h1>
-      <h5>
+      <!-- <h5>
         Organized by
         {{
           typeof event.organizer == 'object'
             ? event.organizer.name
             : event.organizer
         }}
-      </h5>
-      <h5>Category: {{ event.category }}</h5>
+      </h5> -->
+      <h5>类别: {{ event.category }}</h5>
     </div>
-    <BaseIcon name="map"><h2>Location</h2></BaseIcon>
+    <BaseIcon name="map"><h2>地点</h2></BaseIcon>
     <address>{{ event.location }}</address>
-    <h2>Event details</h2>
+    <h2>事件描述</h2>
     <p>{{ event.description }}</p>
-    <h2>
+    <!-- <h2>
       Attendees
       <span class="badge -fill-gradient">{{
         event.attendees ? event.attendees.length : 0
       }}</span>
-    </h2>
-    <ul class="list-group">
+    </h2> -->
+    <!-- <ul class="list-group">
       <li
         v-for="(attendee, index) in event.attendees"
         :key="index"
@@ -31,7 +33,7 @@
       >
         <b>{{ attendee.name }}</b>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 

@@ -1,12 +1,19 @@
 <template>
   <div>
-    <h1>Your Events</h1>
-    <EventCard
-      v-for="event in events"
-      :key="event.id"
-      :event="event"
-      @deleteEvent="deleteEvent"
-    />
+    <h1>事件列表</h1>
+    <template v-if="events.length">
+      <EventCard
+        v-for="event in events"
+        :key="event.id"
+        :event="event"
+        @deleteEvent="deleteEvent"
+      />
+    </template>
+    <template v-else
+      >您还没有添加过事件，点击<router-link :to="{ name: 'event-create' }"
+        >此处</router-link
+      >添加事件
+    </template>
     <div>
       <template v-if="page > 1">
         <router-link :to="{ name: 'event-list', query: { page: page - 1 } }"

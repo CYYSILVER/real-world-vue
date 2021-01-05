@@ -9,7 +9,7 @@
     "json": "json-server --watch db.json"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.8",
     "lodash": "^4.17.11",
     "nprogress": "^0.2.0",
